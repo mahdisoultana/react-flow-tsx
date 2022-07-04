@@ -3,8 +3,8 @@ import ReactFlowPro from "./d3-reactflow/App";
 import { ReactFlowProvider } from "react-flow-renderer";
 import { useState } from "react";
 function App() {
-  const [slider, setSlider] = useState(0);
-  console.log(slider);
+  const [slider, setSlider] = useState(20);
+
   return (
     <div className="h-screen bg-gray-100 w-[100vw]">
       <div className="bg-red-500 m-10 cursor-pointer pointer-events-auto space-x-4 absolute right-4 top-4 flex items-center p-4 z-20">
