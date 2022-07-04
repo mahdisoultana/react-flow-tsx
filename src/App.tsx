@@ -14,7 +14,7 @@ function App() {
           onChange={(e) => setSlider(+e.target.value)}
           className="cursor-pointer pointer-events-auto"
         />
-        <p>{slider} strength</p>
+        <p>{slider * -100} strength</p>
       </div>
       <div className="h-screen bg-red-100 w-[100vw] absolute bottom-0 left-0 z-10">
         <ReactFlowProvider>
