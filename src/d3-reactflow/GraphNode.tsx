@@ -16,8 +16,9 @@ const nodeStyle: React.CSSProperties = {
   backgroundColor: "#fff",
   zIndex: 2,
   borderRadius: 40,
-  height: 40,
-  width: 40,
+  height: 80,
+  width: 80,
+  border: "2px #333 solid",
 };
 const GraphNode = ({ data }: NodeProps) => {
   const graphNodeStyle = useMemo(
@@ -26,7 +27,9 @@ const GraphNode = ({ data }: NodeProps) => {
   );
   return (
     <div style={graphNodeStyle}>
-      {data?.label && <div style={labelStyle}>{data.label}</div>}
+      {data?.label && (
+        <div style={{ ...labelStyle, pointerEvents: "none" }}>{data.label}</div>
+      )}
       <Handle style={handleStyle} type="target" position={Position.Top} />
       <Handle style={handleStyle} type="source" position={Position.Bottom} />
     </div>
