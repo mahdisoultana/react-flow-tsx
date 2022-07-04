@@ -12,10 +12,8 @@ import { v4 as uuidv4 } from "uuid";
 import { useReactFlow } from "react-flow-renderer";
 
 import tree from "./tree";
-
-const nodeColorScale = scaleLinear()
-  .domain([0, 5])
-  .range(["#FF0072", "#0041D0"]);
+const colors: any = ["#FF0072", "#0041D0"];
+const nodeColorScale = scaleLinear().domain([0, 5]).range(colors);
 
 function getNode(n: any) {
   return {
