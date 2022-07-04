@@ -19,6 +19,7 @@ const nodeStyle: React.CSSProperties = {
   height: 80,
   width: 80,
   border: "2px #333 solid",
+  fontWeight: "bold",
 };
 const GraphNode = ({ data }: NodeProps) => {
   const graphNodeStyle = useMemo(
