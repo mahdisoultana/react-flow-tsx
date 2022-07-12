@@ -20,7 +20,7 @@ function getNode(n: any) {
     id: n.data.id,
     position: { x: n.x, y: n.y },
     data: { label: n.data.name, color: nodeColorScale(n.depth) },
-    type: "circle",
+    type: "valve-node",
   };
 }
 function getEdge(e: any) {
@@ -29,11 +29,18 @@ function getEdge(e: any) {
     source: e.source.data.id,
     target: e.target.data.id,
     type: "straight",
+    label: "To",
   };
 }
 const root: any = hierarchy(tree);
+// // root node
 const links: any = root.links();
+// //object has nodes array and edges array
 const nodes: any = root.descendants();
+// //nodes array
+// import nodesM from "./nodes";
+// import edgesM from "./edges";
+
 type UseForceLayoutOptions = {
   strength?: number;
   distance?: number;
@@ -43,6 +50,7 @@ function useForceLayout({
   distance = 150,
 }: UseForceLayoutOptions) {
   const { setNodes, setEdges } = useReactFlow();
+  // const nodes: any = nodesM;
 
   useEffect(() => {
     const simulation = forceSimulation(nodes)

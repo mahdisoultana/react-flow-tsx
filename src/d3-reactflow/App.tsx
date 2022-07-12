@@ -8,7 +8,9 @@ import ReactFlow, {
 } from "react-flow-renderer";
 import useForceLayout from "./useForceLayout";
 import GraphNode from "./GraphNode";
+
 const proOptions: ProOptions = { account: "paid-pro", hideAttribution: true };
+
 const defaultNodes: Node[] = [];
 const defaultEdges: Edge[] = [];
 const nodeTypes: NodeTypes = {
@@ -20,7 +22,6 @@ type ExampleProps = {
 };
 export default function ReactFlowPro({ strength, distance }: ExampleProps) {
   useForceLayout({ strength, distance });
-  const nodes = useNodes();
 
   return (
     <ReactFlow
